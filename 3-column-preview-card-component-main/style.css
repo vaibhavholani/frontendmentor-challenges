@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+    --card1-color: hsl(31, 77%, 52%);
+    --card2-color: hsl(184, 100%, 22%);
+    --card3-color: hsl(179, 100%, 13%);
+
+    --p-colors: hsla(0, 0%, 100%, 0.75);
+    --bg-headings-buttons: hsl(0, 0%, 95%);
+}
+
+body {
+    font-size: 15px;
+    background: var(--bg-headings-buttons);
+
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    display: flex;
+    border-radius: 10px;
+    max-width: 900px;
+    min-height: 450px;
+    
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:100%;
+    padding: 5%;
+    transition: all ease-in 200ms;
+}
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+.card  h1{
+    font-family: 'Big Shoulders Display', 'sans-serif';
+    color: var(--bg-headings-buttons);
+    
+}
+
+.card p {
+    color: var(--p-colors);
+    font-family: 'Lexend Deca', 'sans-serif';
+}
+
+.card button {
+    border: 1px solid var(--bg-headings-buttons);
+    border-radius: 100px;
+    background-color: var(--bg-headings-buttons);
+    box-sizing: border-box;
+    padding: 1em 1.5em;
+    font-family: 'Lexend Deca', 'sans-serif';
+    transition: all ease-in 200ms
+
+}
+
+
+.card button:hover {
+    color: var(--bg-headings-buttons);
+    background: transparent;
+    box-shadow: 0 0 20px 0px rgba(255,255,255,0.2);
+}
+
+.card1 {
+    background: var(--card1-color);
+    border-radius: 10px 0 0 10px;
+}
+.card1 button {
+    color: var(--card1-color);
+}
+.card2 {
+    background: var(--card2-color);
+}
+.card2 button {
+    color: var(--card2-color);
+}
+.card3 {
+    background: var(--card3-color);
+    border-radius: 0 10px 10px 0;
+}
+.card3 button {
+    color: var(--card3-color);
+}
+
+@media (max-width: 900px) {
+    .body {
+        height: auto;
+        width: auto;
+
+    }
+    
+    .wrapper {
+        flex-direction: column;
+        min-height: none;
+        width: 80%;
+        margin: 3rem 0;
+    }
+
+    .card {
+        padding: 2em;
+        box-sizing: border-box;
+    }
+
+    .card1 {
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .card3 {
+        border-radius: 0px 0px 10px 10px;
+    }
+}
+
