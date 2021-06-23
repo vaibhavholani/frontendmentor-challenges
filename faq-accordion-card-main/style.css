@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --text-faq-focus: hsl(238, 29%, 16%);
+    --text-faq : hsl(237, 12%, 33%);
+    --text-answer : hsl(240, 6%, 50%);
+    --text-arrow: hsl(14, 88%, 65%);
+    --gradient-start: hsl(273, 75%, 66%);
+    --gradient-end: hsl(240, 73%, 65%);
+    --divider: hsl(240, 5%, 91%);
+    
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(to bottom, var(--gradient-start) , var(--gradient-end));
+    background-attachment: fixed;
+    font-size: 14px;
+    min-height: 98vh;
+    width: auto;
+}
+
+.card {
+    display: flex;
+    background: white;
+    border-radius: 2rem;
+    position: relative;
+    box-shadow: 0 50px 70px -40px rgba(0,0,0,0.5),
+                -320px 20px 80px -250px  rgba(0,0,0,0.8)
+    ;
+}
+
+.card::before {
+    content: url("/images/illustration-box-desktop.svg");
+    position: absolute;
+    top: 40%;
+    left: -13%;
+    z-index: 1;
+}
+
+.card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image-bg {
+    position: absolute;
+    object-fit: contain;
+    top: -55%;
+    left: -125%;
+}
+
+.card-image-main {
+    transform: translate(-18%, 20%);
+}
+
+.card-faq {
+    font-family: 'Kumbh Sans', sans-serif;
+    padding: 6em 6em 6em 0;
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+.faq-list {
+    list-style: none;
+    padding: 0;
+}
+
+.faq-item {
+    width: 40ch;
+    padding: 0.1em 0;
+    padding-right: 1em;
+    border-bottom: 1px solid var(--divider);
+    border-width: calc(100% + 20em);
+    overflow: hidden;
+}
+
+.faq-question {
+    display: block;
+    color: var(--text-faq);
+    position: relative;
+    background: white;
+    z-index: 1;
+}
+
+.faq-question:hover {
+    cursor: pointer;
+}
+
+.faq-item[state="closed"]  .faq-question:hover{
+    color: var(--text-arrow);
+}
+
+.faq-question::before {
+    content: url("/images/icon-arrow-down.svg");
+    position: absolute;
+    right: -1em;
+    bottom: 0;
+}
+
+.faq-item[state='open'] .faq-question {
+    color: var(--text-faq-focus);
+    font-weight: 700;
+}
+
+.faq-item[state='open'] .faq-question::before {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    color: var(--text-answer);
+    font-size: 12px;
+    line-height: 1.5em;
+    transition: all 100ms linear;
+    max-height: 100px;
+    margin: 0;
+}
+
+.faq-item[state='closed'] .faq-answer {
+   max-height: 0;
+}
+
+@media (max-width: 800px) {
+
+    body {
+        height: auto;
+    }
+    
+    .card{
+        flex-direction: column;
+    }
+
+    .card::before {
+        transform: scale(0.4);
+        top: -5rem;
+        left: 0.0rem;
+    }
+
+    .card-image {
+        position: relative;
+        overflow: visible;
+
+    }
+
+    .card-image-main {
+        position: absolute;
+        transform: scale(0.5);
+        top: -12.5rem;
+        left: -3.75rem;
+        
+    }
+
+    .card-image-bg {
+        transform: scale(0.25);
+        top: -35em;
+        left: -19.3rem;
+    }
+
+    .card-faq {
+        margin-top: 6rem;
+        padding: 2em;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .faq-item {
+        width: 35ch;
+    }
+
+}
+
+@media (max-height: 750px) and (max-width: 800px) {
+    .card {
+        margin-top: 10rem;
+    }
+
+}
