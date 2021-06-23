@@ -35,7 +35,7 @@ body {
 }
 
 .card::before {
-    content: url("/images/illustration-box-desktop.svg");
+    content: url("./images/illustration-box-desktop.svg");
     position: absolute;
     top: 40%;
     left: -13%;
@@ -100,7 +100,7 @@ body {
 }
 
 .faq-question::before {
-    content: url("/images/icon-arrow-down.svg");
+    content: url("./images/icon-arrow-down.svg");
     position: absolute;
     right: -1em;
     bottom: 0;
